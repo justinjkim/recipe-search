@@ -23,19 +23,21 @@ function search() {
 	      }
 	      else {
 	      	response.json().then(function(data) {
-	      		// log the results of search term
 	      		let data_copy = data.results;
+
+	      		let main = document.querySelector("main");
+	      		// to reset in case you want to do a new search
+	      		main.innerHTML = "";
 
 	        	for (i in data_copy) {
 	        		let recipe = document.createElement("div");
 	        		recipe.setAttribute("class", "recipe");
-	        		let main = document.querySelector("main");
 	        		main.appendChild(recipe);
 
 	        		console.log(data_copy[i].title);
 	        		// template literal
 	        		let innards = `
-	        			<h3>${data_copy[i].title}</h3>
+	        			<a href=${data_copy[i].href}><h3>${data_copy[i].title}</h3></a>
 	        			<img src=${data_copy[i].thumbnail} />
 	        		`
 
