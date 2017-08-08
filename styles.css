@@ -1,0 +1,51 @@
+body {
+	font-family: 'Ubuntu', sans-serif;	
+}
+
+header {
+	background-color: lightgreen;
+	margin-bottom: 30px;
+}
+
+header h1 {
+	text-align; center;
+	padding: 10px;
+}
+
+header form {
+	padding: 20px;
+}
+
+input[type=search] {
+	padding: 50px;
+	width: 200px;
+	height: 200px;
+}
+
+#btnSearch {
+	margin-left: 20px;
+}
+
+a {
+	text-decoration: none;
+	transition: color ease 0.5s;
+}
+
+a:hover {
+	color: #f98;
+}
+
+main {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+}
+
+.recipe {
+	width: 200px;
+	height: 200px;
+	border: 1px solid grey;
+	margin-bottom: 20px;
+	padding: 10px;
+	margin: 10px;
+}

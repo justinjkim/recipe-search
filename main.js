@@ -58,6 +58,8 @@ function search() {
 	        	// 		<h3>${content.results.title}</h3>
 	        	// 	`
 
+	        	//	return innards;
+
 	        	// 	recipe.innerHTML = innards;
 	        	// } // end of map function
 
