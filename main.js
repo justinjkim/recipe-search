@@ -34,14 +34,23 @@ function search() {
 	        		recipe.setAttribute("class", "recipe");
 	        		main.appendChild(recipe);
 
-	        		console.log(data_copy[i].title);
-	        		// template literal
-	        		let innards = `
+	        		if (data_copy[i].thumbnail === "") {
+	        			let innards = `
+	        			<a href=${data_copy[i].href}><h3>${data_copy[i].title}</h3></a>
+	        			<img src="https://pleper.com/html/assets/img/no-image-found.jpg" class="placeholder"} />
+	        		`
+	        			recipe.innerHTML = innards;
+	        		}
+	        		else {
+	        			let innards = `
 	        			<a href=${data_copy[i].href}><h3>${data_copy[i].title}</h3></a>
 	        			<img src=${data_copy[i].thumbnail} />
 	        		`
 
-	        		recipe.innerHTML = innards;
+	        			recipe.innerHTML = innards;
+	        		}
+	
+	        		
 	        	} // end of for loop
 
 
