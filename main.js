@@ -29,48 +29,46 @@ function search() {
 	      		// to reset in case you want to do a new search
 	      		main.innerHTML = "";
 
-	        	for (i in data_copy) {
-	        		let recipe = document.createElement("div");
-	        		recipe.setAttribute("class", "recipe");
-	        		main.appendChild(recipe);
+	        	// for (i in data_copy) {
+	        	// 	let recipe = document.createElement("div");
+	        	// 	recipe.setAttribute("class", "recipe");
+	        	// 	main.appendChild(recipe);
 
-	        		if (data_copy[i].thumbnail === "") {
-	        			let innards = `
-	        			<a href=${data_copy[i].href}><h3>${data_copy[i].title}</h3></a>
-	        			<img src="https://pleper.com/html/assets/img/no-image-found.jpg" class="placeholder"} />
-	        		`
-	        			recipe.innerHTML = innards;
-	        		}
-	        		else {
-	        			let innards = `
-	        			<a href=${data_copy[i].href}><h3>${data_copy[i].title}</h3></a>
-	        			<img src=${data_copy[i].thumbnail} />
-	        		`
+	        	// 	if (data_copy[i].thumbnail === "") {
+	        	// 		let innards = `
+	        	// 		<a href=${data_copy[i].href}><h3>${data_copy[i].title}</h3></a>
+	        	// 		<img src="https://pleper.com/html/assets/img/no-image-found.jpg" class="placeholder"} />
+	        	// 	`
+	        	// 		recipe.innerHTML = innards;
+	        	// 	}
+	        	// 	else {
+	        	// 		let innards = `
+	        	// 		<a href=${data_copy[i].href}><h3>${data_copy[i].title}</h3></a>
+	        	// 		<img src=${data_copy[i].thumbnail} />
+	        	// 	`
 
-	        			recipe.innerHTML = innards;
-	        		}
+	        	// 		recipe.innerHTML = innards;
+	        	// 	}
 	
 	        		
-	        	} // end of for loop
+	        	// } // end of for loop
 
 
 	        	// not sure why but Map doesn't work here...
-	        	// data.map(content) => {
-	        	// 	let recipe = document.createElement("div");
-	        	// 	recipe.setAttribute("class", "recipe");
-	        	// 	let main = document.querySelector("main");
-	        	// 	main.appendChild(recipe);
+	        	data_copy.map((content) => {
+	        		let recipe = document.createElement("div");
+	        		recipe.setAttribute("class", "recipe");
+	        		let main = document.querySelector("main");
+	        		main.appendChild(recipe);
 
-	        	// 	// template literal
-	        	// 	let innards = `
-	        	// 		<img src="${content.results.href}" />
-	        	// 		<h3>${content.results.title}</h3>
-	        	// 	`
+	        		// template literal
+	        		let innards = `
+	        			<img src="${content.thumbnail}" />
+	        			<h3>${content.title}</h3>
+	        		`
 
-	        	//	return innards;
-
-	        	// 	recipe.innerHTML = innards;
-	        	// } // end of map function
+	        		recipe.innerHTML = innards;
+	        	}) // end of map function
 
 	      	}); // end of actual function that parses through JSON
 	      } // end of overall successful response function
